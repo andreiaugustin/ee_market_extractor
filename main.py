@@ -1,23 +1,25 @@
 import time
 from utils import getAveragePricesForItemName
 
-start = time.time()
-
 items = [
-    'Pyerite',
-    'Zydrine',
-    'Mexallon',
-    'Tritanium',
-    'Opulent Compound',
-    'Heavy Metals',
-    'Heavy Water',
-    'Plasmoids'
+    # # ,'MK9 Large Shield Field Module'
+    # # ,'MK9 Large Armor Link Module'
+    # # ,'MK9 Large Group Shield Booster'
+    # # ,'MK9 Large Group Armor Repairer'
+    # # ,'MK9 Large Group Capacitor Transmitter'
+    # # ,'MK7 Large Shield Field Module'
+    # 'MK7 Large Armor Link Module'
+    # ,'MK9 Large Energy Nosferatu'
+    # ,'MK9 Large Energy Neutralizer'
+    # ,'MK9 Covert Ops Cloaking Device'
+    # ,'MK9 Large Shield Extender'
+    # ,'MK9 1600mm Reinforced Steel Plate'
 ]
+
+average_prices = []
 
 for item in items:
     average = getAveragePricesForItemName(item)
-    print('\nThe average price of {name} is {price} ISK.\n'.format(name=item, price=average))
+    average_prices.append({item:average})
 
-end = time.time()
-print('Finished in {}'.format(end-start))
-    
+print(average_prices)

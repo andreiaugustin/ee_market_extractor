@@ -6,7 +6,8 @@ from window import (
     findWindowByOwner, 
     capture, 
     click, 
-    write
+    write,
+    hotkey
 )
 
 def getAveragePriceFromText(pText):
@@ -22,7 +23,9 @@ def getAveragePriceFromText(pText):
                     .replace("/","")
                     )
                 )
-    return round(sum(numbers) / len(numbers))
+    if len(numbers):
+        return round(sum(numbers) / len(numbers))
+    return 0
 
 def getAveragePricesForItemName(pName):
     rect = findWindowByOwner(getWindowName())
@@ -36,7 +39,7 @@ def getAveragePricesForItemName(pName):
     click(coordinates['menu_market'], 2)
     click(coordinates['market_open_search'], 2)
     write(pName)
-    click(coordinates['close_keyboard'], 2)
+    hotkey('esc', 2)
     click(coordinates['market_search_btn'], 5)
     click(coordinates['market_first_result'], 4)
     pic = capture(( # first three prices coordinates

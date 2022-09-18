@@ -28,3 +28,6 @@ def click(pCoords, pWait=default_wait_time):
 def write(pText, pWait=default_wait_time):
     pyautogui.typewrite(pText)
     sleep(pWait)
+    
+def hotkey(pKey, pWait=default_wait_time):
+    pyautogui.hotkey(pKey)
